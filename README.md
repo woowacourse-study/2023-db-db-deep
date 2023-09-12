@@ -21,5 +21,6 @@
      <td align="center"><a href="https://github.com/yeonkkk"><img src="https://avatars.githubusercontent.com/u/88660886?v=4?v=4?s=100" width="100px;" alt=""/><br /><sub><b>조이</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/zillionme"><img src="https://avatars.githubusercontent.com/u/100172683?v=4?s=100" width="100px;" alt=""/><br /><sub><b>이레</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/yoondgu"><img src="https://avatars.githubusercontent.com/u/97426362?v=4?s=100" width="100px;" alt=""/><br /><sub><b>도이</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/wugawuga"><img src="https://avatars.githubusercontent.com/u/91244090?v=4?s=100" width="100px;" alt=""/><br /><sub><b>우가</b></sub></a><br /></td>
 </tr>
 </table>
