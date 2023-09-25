@@ -1,7 +1,12 @@
+# Concurrency Control 기초 2 - Recoverability
+
 ## 학습 주제
 - Recoverable Schedule
 - Cascadeless Schedule
 - Strict Schedule
+
+
+<br><br><br><br>
 
 ## 가정
 > 여기 100만원을 가진 `조이`와 200만원을 가진 `리버`라는 사람이 있다.  
