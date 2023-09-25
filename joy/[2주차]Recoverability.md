@@ -31,7 +31,7 @@
 이러한 이유로 `Unrecoverable Schedule`이 아닌 `Recoverable Schedule`을 허용해야 한다.  
 
 <br><br><br><br>
-## recoverable schedule
+## Recoverable Schedule
 - 같은 스케줄 내에서 어떤 트랜잭션도 자신이 읽은 데이터를 `write`한 트랜잭션이 먼저 `commit`/`rollback` 전까지 커밋 하지 않은 경우에 해당한다. 
 - 의존성이 있을 경우, 의존의 대상이 되는 트랜잭션(예시 `트랜잭션1`)이 종료될 때까지 의존하는 트랜잭션(예시 `트랜잭션2`)은 커밋하면 안 된다.
   - 예시에서 `write(리버_balance = 230)` 경우를 생각해볼 수 있음  
