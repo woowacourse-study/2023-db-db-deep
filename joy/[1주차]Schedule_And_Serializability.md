@@ -143,8 +143,8 @@ isolation을 너무 엄격하게 지한하면 그 만큼 성능이 떨어지고 
 <br><br><br><br>
 
 ## 참고 자료
-[쉬운 코드 - concurrency control 기초 - schedule과 serializability](https://youtu.be/DwRN24nWbEc?si=W_SevurH_fyurcwD)
-[[DB] 동시성 제어(Concurrency control) 1편](https://velog.io/@daen_h/DB-%EB%8F%99%EC%8B%9C%EC%84%B1-%EC%A0%9C%EC%96%B4-Concurrency-control-1%ED%8E%B8)
+- [쉬운 코드 - concurrency control 기초 - schedule과 serializability](https://youtu.be/DwRN24nWbEc?si=W_SevurH_fyurcwD)
+- [[DB] 동시성 제어(Concurrency control) 1편](https://velog.io/@daen_h/DB-%EB%8F%99%EC%8B%9C%EC%84%B1-%EC%A0%9C%EC%96%B4-Concurrency-control-1%ED%8E%B8)
 
 
 
