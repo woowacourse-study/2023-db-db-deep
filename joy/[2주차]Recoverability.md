@@ -12,12 +12,12 @@
 > 여기 100만원을 가진 `조이`와 200만원을 가진 `리버`라는 사람이 있다.  
 > `조이`가 `리버`에게 20만원을 이체할 때, `리버`도 자신의 계좌에 30만원을 입금하는 상황을 생각해보자.
 
-![스크린샷 2023-09-26 오전 3 42 37](https://github.com/yeonkkk/2023-db-db-deep/assets/88660886/ac7da39a-83c1-425b-831f-d3ee55f60674)
+![Concurrency Control 기초 2-1.jpeg](img%2FConcurrency%20Control%20%EA%B8%B0%EC%B4%88%202-1.jpeg)
 
 위 상황은 어떤 문제가 발생한 것일까?  
 좀 더 자세하게 살펴보자.  
 
-![스크린샷 2023-09-26 오전 3 43 15](https://github.com/yeonkkk/2023-db-db-deep/assets/88660886/6510d510-c95e-4cab-908e-01767ad17288)
+![Concurrency Control 기초 2-2.jpeg](img%2FConcurrency%20Control%20%EA%B8%B0%EC%B4%88%202-2.jpeg)
 
 - 리버가 먼저 자신의 계좌에 30만원을 입금하여 리버 계좌의 총 금액이 230만원이 되었다. 하지만 아직 커밋(반영)하지는 않았다.
 - 그 사이에 조이가 리버에게 20만원 이체하여 230 + 20 으로 총 금액을 250만원으로 만들고 커밋(반영)하였다.
@@ -102,8 +102,8 @@ t2_commit
 <br><br><br><br>
 ## 정리
 
-<img width="500" alt="image" src="https://github.com/yeonkkk/2023-db-db-deep/assets/88660886/82727aa8-7a2f-49bd-b6ff-5158c0a2b29a">  
-<br><br>
+![Concurrency Control 기초 2-3.jpeg](img%2FConcurrency%20Control%20%EA%B8%B0%EC%B4%88%202-3.jpeg)
+
 
 - `Unrecoverable Schedule`은 롤백이 발생했을 때 회복 불가능할 수  있기 때문에, DBMS에서 허용하면 안된다.
 - `Recoverable Schedule`은 롤백이 발생했을 때 회복 가능하기 때문에 이런 스케줄은 DBMS에서 허용해줘도 된다. 

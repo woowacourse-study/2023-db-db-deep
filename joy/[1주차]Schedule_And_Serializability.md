@@ -1,14 +1,10 @@
 # Concurrency Control 기초 : Schedule과 Serializability  
 
-## 가정
->여기 100만원을 가진 조이와 200만원을 가진 도이라는 사람이 있다.
-조이가 도이에게 20만원을 이체할 때, 리버도 자신의 계좌에 30만원을 입금하는 상황을 생각해보자.
-<img width="1432" alt="스크린샷 2023-09-27 오후 1 22 37" src="https://github.com/yeonkkk/2023-db-db-deep/assets/88660886/f32507ff-4d4d-4249-b306-674780a37217">
-
-위 상황은 어떤 문제가 발생한 것일까?
-좀 더 자세하게 살펴보자.
-
-<img width="1430" alt="스크린샷 2023-09-27 오후 1 21 36" src="https://github.com/yeonkkk/2023-db-db-deep/assets/88660886/f9b26f2f-3a24-402a-a006-5822cd3e628c">
+## 가정 
+>여기 100만원을 가진 조이와 200만원을 가진 도이라는 사람이 있다.  
+조이가 도이에게 20만원을 이체할 때, 리버도 자신의 계좌에 30만원을 입금하는 상황을 생각해보자.  
+  
+![Concurrency Control 기초 1 -1.jpeg](img%2FConcurrency%20Control%20%EA%B8%B0%EC%B4%88%201%20-1.jpeg)
 
 - 조이가 도이의 계좌의 금액을 확인했다(200만원)
 - 도이도 자신의 계좌의 금액을 확인했다 (200만원)
@@ -26,7 +22,7 @@
 > 트랜잭션 내의 하나의 실행 단위를 Operation이라고 한다.  
 > 아래와 같이 간소화하여 나타낼수도 있다.
 
-<img width="1077" alt="스크린샷 2023-09-27 오후 1 37 16" src="https://github.com/yeonkkk/2023-db-db-deep/assets/88660886/e8ebfcc1-c5c0-49fe-99a9-62cc141ddbef">
+![Concurrency Control 기초 1-2.png](img%2FConcurrency%20Control%20%EA%B8%B0%EC%B4%88%201-2.png)
 
 <br><br><br><br>
 
@@ -37,14 +33,14 @@
 앞선 예시에 적용될 수 있는 스케줄 케이스들을 생각해보고, 각 스케줄 종류에 대해서 알아보자.    
 스케줄 종류를 알아보기 위한 스케줄 케이스들은 아래와 같다.  
 
-<img width="900" alt="스크린샷 2023-09-27 오후 1 45 43" src="https://github.com/yeonkkk/2023-db-db-deep/assets/88660886/9c6bf1e8-0c8d-4591-8bcc-87f835e0e385">
+![Concurrency Control 기초 1-3.png](img%2FConcurrency%20Control%20%EA%B8%B0%EC%B4%88%201-3.png)
 
 <br><br><br><br>
 
 ### Serial Schedule
 > 케이스 1과 2 처럼 트랜잭션들이 겹치지 않고 한 번에 하나씩 실행되는 스케줄을 말한다.  
 
-<img width="929" alt="스크린샷 2023-09-27 오후 1 51 41" src="https://github.com/yeonkkk/2023-db-db-deep/assets/88660886/7b3058bc-0d68-4ec6-88bd-adfb7339d209">
+![Concurrency Control 기초 1-4.png](img%2FConcurrency%20Control%20%EA%B8%B0%EC%B4%88%201-4.png)
 
 한 번에 하나의 트랜잭션만 실행되기 때문에, 좋은 성능을 내기 어렵고 현실적으로 사용할 수 없는 방식이다.  
 즉, 동시성이 없어서 빠르게 처리가 불가능하다.  
@@ -55,8 +51,7 @@
 ### Nonserial Schedule
 > 트랜잭션이 겹쳐서(interleaving) 실행되는 스케줄을 말한다.
 
-<img width="933" alt="스크린샷 2023-09-27 오후 1 57 39" src="https://github.com/yeonkkk/2023-db-db-deep/assets/88660886/35f4ec1b-1156-433a-80ae-ae538240fd1a">
-
+![Concurrency Control 기초 1-5.png](img%2FConcurrency%20Control%20%EA%B8%B0%EC%B4%88%201-5.png)
 
 트랜잭션들이 겹쳐서 실행되기 때문에 동시성이 높아져서 같은 시간 동안 더 많은 트랜잭션들을 처리할 수 있다.  
 하지만 트랜잭션들이 어떤 형태로 겹쳐서 실행되는지에 따라 이상한 결과가 나올 수 있다.  
@@ -85,7 +80,7 @@
 - 같은 데이터에 접근한다.
 - 최소 하나의 오퍼레이션은 `write`이다.
 
-<img width="940" alt="스크린샷 2023-09-27 오후 2 14 22" src="https://github.com/yeonkkk/2023-db-db-deep/assets/88660886/72c0976f-f569-4411-99cf-540a5837ee22">
+![Concurrency Control 기초 1-6.png](img%2FConcurrency%20Control%20%EA%B8%B0%EC%B4%88%201-6.png)
 
 <br><br><br><br>
 
@@ -103,8 +98,7 @@
 > serial shedule과 conflict equivalent 일 때 conflict serializable 하다고 한다.
 > 앞에서 확인한 4개의 스케줄을 다시 확인해보고, conflict serializable한 스케줄이 있는지 찾아보자!
 
-
-<img width="900" alt="스크린샷 2023-09-27 오후 1 45 43" src="https://github.com/yeonkkk/2023-db-db-deep/assets/88660886/9c6bf1e8-0c8d-4591-8bcc-87f835e0e385">
+![Concurrency Control 기초 1-3.png](img%2FConcurrency%20Control%20%EA%B8%B0%EC%B4%88%201-3.png)
 
 위 그림에서 serializable한 스케줄은 case 1과 case2 이다.  
 case 3과 case 4를 이 스케줄들과 비교해보자.  
